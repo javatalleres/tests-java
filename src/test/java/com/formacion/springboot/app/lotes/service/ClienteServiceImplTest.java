@@ -1,6 +1,8 @@
 package com.formacion.springboot.app.lotes.service;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
@@ -9,6 +11,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
@@ -35,6 +38,10 @@ class ClienteServiceImplTest {
 		List<Cliente> listaEsperada = Arrays.asList(Cliente.builder().idCliente(1L).build(),
 				Cliente.builder().idCliente(2L).build());
 		when(clienteService.getAllClientes()).thenReturn(listaEsperada);
+		
+		assertFalse(listaEsperada.isEmpty());
+		assertArrayEquals(Arrays.asList(Cliente.builder().idCliente(1L).build(),
+				Cliente.builder().idCliente(2L).build()).toArray(), listaEsperada.toArray());
 	}
 
 }

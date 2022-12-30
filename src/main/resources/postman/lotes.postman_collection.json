@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "696847e9-85da-4eb2-9b24-260abd28f5fc",
+		"name": "lotes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listar_clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/lotes/listar/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"lotes",
+						"listar",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar_cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/lotes/buscar/cliente/789012",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"lotes",
+						"buscar",
+						"cliente",
+						"789012"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar_lote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codLote\" : \"H00L3\",\r\n    \"nomLote\" : \"Pueblo rico\",\r\n    \"valor\" : \"900.0\",\r\n    \"fecAlta\" : \"2022-12-22\",\r\n    \"idCliente\":\"789012\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/lotes/registrar/lote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"lotes",
+						"registrar",
+						"lote"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

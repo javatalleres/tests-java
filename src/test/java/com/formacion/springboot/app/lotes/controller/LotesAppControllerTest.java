@@ -1,6 +1,6 @@
 package com.formacion.springboot.app.lotes.controller;
 
-import static org.junit.Assert.assertArrayEquals;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 

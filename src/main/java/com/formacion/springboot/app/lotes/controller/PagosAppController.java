@@ -30,13 +30,9 @@ public class PagosAppController {
 		
 		Lote lote = loteService.findLote(pagoDTO.getCodeLote());
 		Pago pago = pagoService
-				    .crearPago(Pago.builder().codConcepto(pagoDTO.getCodConsepto()).
+				            .crearPago(Pago.builder().codConcepto(pagoDTO.getCodConsepto()).
 				    		lote(lote).descripcion(pagoDTO.getDescripcion()).valor(pagoDTO.getPago()).build());
-		         
-		
 		return new ResponseEntity<>(pago, HttpStatus.CREATED);
-		
-		
 	}
 	
 	

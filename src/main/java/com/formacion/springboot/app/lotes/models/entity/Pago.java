@@ -43,7 +43,7 @@ public class Pago implements Serializable {
 	private Long codComprobante;
 
 	@Column(name = "fec_ingreso")
-	private LocalDate fecIngreso;
+	private Date fecIngreso;
 
 	private BigDecimal valor;
 
@@ -62,7 +62,8 @@ public class Pago implements Serializable {
 	
 	@PrePersist
 	private void date() {
-		fecIngreso = LocalDate.now();
+		Date date = new Date(); 
+		fecIngreso = date;
 	}
 	
 	

@@ -12,4 +12,5 @@ public interface ILoteService {
 
 	public List<Lote> findLotesByCliente(Long idCliente);
 
+	Lote findById(String idLote);
 }

@@ -49,4 +49,10 @@ public class LotesAppController {
 		Cliente cliente = clienteService.findCliente(idCliente);
 		return new ResponseEntity<>(cliente, HttpStatus.OK);
 	}
+	
+	@GetMapping("/buscar/lote/{codLote}")
+	public ResponseEntity<Lote> buscarLote (@PathVariable("codLote") String codLote){
+		Lote lote = loteService.findById(codLote);
+		return new ResponseEntity<>(lote, HttpStatus.OK);
+	}
 }

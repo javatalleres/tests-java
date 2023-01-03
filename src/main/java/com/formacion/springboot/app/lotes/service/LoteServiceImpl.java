@@ -28,4 +28,10 @@ public class LoteServiceImpl implements ILoteService {
 	public List<Lote> findLotesByCliente(Long idCliente) {
 		return loteRepository.findByCliente(idCliente);
 	}
+
+	@Override
+	public Lote findById(String idLote) {
+		// TODO Auto-generated method stub
+		return loteRepository.findById(idLote).orElse(null);
+	}
 }

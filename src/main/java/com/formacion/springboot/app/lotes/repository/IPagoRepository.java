@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.formacion.springboot.app.lotes.models.entity.Pago;
 
 @Repository("pagoRepository")
-public interface IPagoRepository extends JpaRepository<Pago, String> {
+public interface IPagoRepository extends JpaRepository<Pago, Long> {
 
 }
  

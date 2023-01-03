@@ -2,6 +2,8 @@ package com.formacion.springboot.app.lotes.models.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -56,5 +59,13 @@ public class Pago implements Serializable {
 	@JoinColumn(name = "cod_lote")
 	@JsonIgnore
 	private Lote lote;
+	
+	@PrePersist
+	private void date() {
+		Date date = new Date(); 
+		fecIngreso = date;
+	}
+	
+	
 
 }

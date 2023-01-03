@@ -1,8 +1,10 @@
 package com.formacion.springboot.app.lotes.controller;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
@@ -40,7 +42,6 @@ public class LotesAppControllerTest {
 	private LotesAppController controller;
 
 	@Test
-	@Disabled
 	public void testRegistrarLote() {
 
 		LoteDTO loteDto = new LoteDTO("lote1", "nombreLote1", new BigDecimal(100), new Date(), 1L);
@@ -49,7 +50,7 @@ public class LotesAppControllerTest {
 
 		when(clienteService.findCliente(Mockito.anyLong())).thenReturn(cliente);
 		when(loteService.create(Mockito.any(Lote.class))).thenReturn(lote);
-
+		
 		ResponseEntity<Lote> response = controller.registrarLote(loteDto);
 		assertEquals(HttpStatus.CREATED, response.getStatusCode());
 		assertEquals(lote, response.getBody());

@@ -28,4 +28,9 @@ public class LoteServiceImpl implements ILoteService {
 	public List<Lote> findLotesByCliente(Long idCliente) {
 		return loteRepository.findByCliente(idCliente);
 	}
+
+	@Override
+	public Lote findLote(String CodigoLote) {
+		return loteRepository.getById(CodigoLote);
+	}
 }

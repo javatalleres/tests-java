@@ -33,8 +33,11 @@ public class LotesAppController {
 
 		Cliente cliente = clienteService.findCliente(loteDto.getIdCliente());
 		Lote temp = loteService
-				.create(Lote.builder().codLote(loteDto.getCodLote()).nomLote(loteDto.getNomLote())
-						.valor(loteDto.getValor()).cliente(cliente).build());
+				.create(Lote.builder()
+						.codLote(loteDto.getCodLote())
+						.nomLote(loteDto.getNomLote())
+						.valor(loteDto.getValor())
+						.cliente(cliente).build());
 		return new ResponseEntity<>(temp, HttpStatus.CREATED);
 	}
 
